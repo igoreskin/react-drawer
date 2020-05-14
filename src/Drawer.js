@@ -7,14 +7,14 @@ const Drawer = () => {
   const [clicked, setClicked] = useState(false);
   const [arrow, setArrow] = useState("<")
 
-  const onDividerClickOpen = () => {
+  const onDividerClickClose = () => {
     setStyleLeft({ width: "0%", visibility: "hidden", transition: "all 0.3s ease-in-out" });
     setStyleRight({ width: "96%", paddingLeft: "25px" });
     setClicked(true);
     setArrow(">")
   }
 
-  const onDividerClickClose = () => {
+  const onDividerClickOpen = () => {
     setStyleLeft({ width: "47.5%", transition: "all 0.3s ease-in-out" });
     setStyleRight({ width: "49%", paddingLeft: "25px" });
     setClicked(false);
@@ -36,7 +36,7 @@ const Drawer = () => {
         flexDirection: "column",
         alignItems: "center", 
         justifyContent: "center" }}
-        onClick={clicked ? onDividerClickClose : onDividerClickOpen} 
+        onClick={clicked ? onDividerClickOpen : onDividerClickClose } 
       >
         <div 
           style={{ fontSize: "115%", fontWeight: "bold", cursor: "pointer", color: "white" }} 
